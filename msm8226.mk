@@ -63,6 +63,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/ueventd.qcom.rc:root/ueventd.qcom.rc \
     $(LOCAL_PATH)/rootdir/init.qcom.ril.sh:system/etc/init.qcom.ril.sh
 
+ifneq ($(filter f520,$(TARGET_DEVICE)),)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/init.zetaw.sensor.sh:root/init.zetaw.sensor.sh
+endif
+
 # GPS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/gps.conf:system/etc/gps.conf \

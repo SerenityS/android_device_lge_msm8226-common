@@ -56,6 +56,14 @@ on post-fs
     chown system system /sys/devices/virtual/input/lge_touch/lpwg_notify
     chmod 664 /sys/devices/virtual/input/lge_touch/dt2w_enable
     chown system system /sys/devices/virtual/input/lge_touch/dt2w_enable
+    chmod 664 /sys/devices/virtual/input/lge_touch/tap_to_wake
+    chown system system /sys/devices/virtual/input/lge_touch/tap_to_wake
+    chmod 644 /sys/devices/virtual/input/lge_touch/lpwg_test_info
+    chown system system /sys/devices/virtual/input/lge_touch/lpwg_test_info
+    chmod 644 /sys/devices/virtual/input/lge_touch/lpwg_test_ctrl
+    chown system system /sys/devices/virtual/input/lge_touch/lpwg_test_ctrl
+    chmod 664 /sys/devices/virtual/input/lge_touch/touch_wake_up_test
+    chown system system /sys/devices/virtual/input/lge_touch/touch_wake_up_test
     chmod 664 /sys/devices/virtual/input/lge_touch/incoming_call
     chown system system /sys/devices/virtual/input/lge_touch/incoming_call
     chmod 664 /sys/devices/virtual/input/lge_touch/lockscreen
@@ -196,6 +204,8 @@ on boot
     chmod 0660 /dev/ttyHS99
     chown bluetooth net_bt_stack /sys/devices/platform/msm_serial_hs.0/clock
     chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
+
+    setprop bluetooth.chip.vendor brcm
 
     # Led
     chown system system /sys/class/leds/red/blink
@@ -370,6 +380,11 @@ service irsc_util /system/bin/irsc_util "/etc/sec_config"
 service rmt_storage /system/bin/rmt_storage
     class core
     user root
+
+service lge-sensor-sh /system/bin/sh /init.zetaw.sensor.sh
+    class main
+    user root
+    oneshot
 
 service bt-dun /system/bin/dun-server /dev/smd7 /dev/rfcomm0
     class late_start
