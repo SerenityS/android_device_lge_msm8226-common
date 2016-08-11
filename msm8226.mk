@@ -76,6 +76,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/quipc.conf:system/etc/quipc.conf \
     $(LOCAL_PATH)/gps/etc/sap.conf:system/etc/sap.conf
 
+# IRSC
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/etc/sec_config:system/etc/sec_config
+
 # Qcom wlan
 ifeq ($(BOARD_HAS_QCOM_WCNSS),true)
 PRODUCT_COPY_FILES += \
