@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter w3ds w5 w7 g2m jag3gds jagnm,$(TARGET_DEVICE)),)
+ifneq ($(filter w3ds w5 w7 g2m jag3gds jagnm f520,$(TARGET_DEVICE)),)
 
 include $(CLEAR_VARS)
 
