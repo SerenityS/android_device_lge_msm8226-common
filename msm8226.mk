@@ -197,5 +197,6 @@ endif
 # System properties
 -include $(LOCAL_PATH)/system_prop.mk
 
+ifneq ($(filter w7 jag3gds jagnm g2m w5 w3ds,$(TARGET_DEVICE)),)
 $(call inherit-product, vendor/lge/msm8226-common/msm8226-common-vendor.mk)
-
+endif
