@@ -7,7 +7,7 @@ case "$product" in
 	setprop gsm.version.baseband `strings /firmware/image/modem.b21 | grep "^M8626A-" | head -1`
 	;;
 	"f520" )
-	setprop gsm.version.baseband `strings /firmware/image/modem.b22 | grep "^MPSS.DI" | head -1`
+	setprop gsm.version.baseband `strings /firmware/image/modem.b21 | grep "^MPSS.DI" | head -1`
 	;;
 esac
 
